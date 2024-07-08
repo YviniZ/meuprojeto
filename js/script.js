@@ -70,12 +70,12 @@ function validarFormulario() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
 
-  menuToggle.addEventListener('click', function () {
-    this.classList.toggle('open');
-    mainNav.classList.toggle('open');
-  });
+    menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('open');
+        mainNav.classList.toggle('open');
+    });
 });
