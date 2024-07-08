@@ -1,25 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-}
-
-header h1 {
-  margin: 0;
-}
-
+/* Estilos principais */
 .menu-toggle {
-  display: none;
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
@@ -30,7 +11,7 @@ header h1 {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: #333;
   margin: 5px 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -48,63 +29,26 @@ header h1 {
 }
 
 .main-nav {
-  display: flex;
+  display: none;
+}
+
+.main-nav.open {
+  display: block;
 }
 
 .main-nav ul {
-  display: flex;
   list-style: none;
   padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
 .main-nav ul li {
-  margin-left: 1rem;
+  margin-bottom: 10px;
 }
 
 .main-nav ul li a {
   text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .main-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    transform: translateX(100%);
-  }
-
-  .main-nav.open {
-    transform: translateX(0);
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-  }
-
-  .main-nav ul li {
-    margin: 1rem 0;
-  }
-}
-
-.main-nav ul li a {
-  text-decoration: none;
-  color: #fff;
+  color: #333;
   font-size: 18px;
 }
 
@@ -122,7 +66,7 @@ header h1 {
     right: -100%;
     width: 70%;
     height: 100%;
-    background-color: #333;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease;
   }
@@ -141,6 +85,11 @@ header h1 {
 
   .main-nav ul li {
     margin-bottom: 20px;
+  }
+
+  /* Oculta informações de contato */
+  .contact-info {
+    display: none;
   }
 }
 
@@ -234,24 +183,21 @@ section h2 {
 }
 
 /* Formulário de Contato */
-#formulario-container {
-  text-align: center;
-  padding: 2rem;
-}
-
-#formulario-container h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-
 #formulario {
   background-color: #ffbf00;
   padding: 1rem;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 18.75rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  transition: left 0.3s ease-in-out;
+}
+
+#formulario h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
 }
 
 #formulario form {
@@ -283,6 +229,20 @@ section h2 {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+}
+
+#toggleFormularioInside {
+  position: absolute;
+  top: 0;
+  right: -1.25rem;
+  background: #f0f0f0;
+  border: none;
+  z-index: 1001;
+}
+
+#toggleIcon {
+  width: 1rem;
+  height: 1rem;
 }
 
 /* Footer */
@@ -354,7 +314,7 @@ footer {
   }
 
   .contact-info {
-    margin-right: 0.5rem;
+    display: none; /* Oculta informações de contato */
   }
 
   nav ul li {
@@ -363,6 +323,11 @@ footer {
 
   main {
     margin: 3rem auto 1rem;
+  }
+
+  #formulario {
+    width: calc(100% - 2rem);
+    left: 1rem;
   }
 
   #whatsappButton {
