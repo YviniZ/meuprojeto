@@ -9,13 +9,9 @@
 </head>
 
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo da Transportadora Rápida" class="logo">
-    <button class="menu-toggle" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <!-- Cabeçalho para desktop -->
+  <header class="desktop-view">
+    <h1>Transportadora Rápida</h1>
     <nav class="main-nav">
       <ul>
         <li><a href="#inicio">Início</a></li>
@@ -30,6 +26,23 @@
     </div>
   </header>
 
+  <!-- Cabeçalho para mobile -->
+  <header class="mobile-view">
+    <h1>Transportadora Rápida</h1>
+    <button id="toggleNav" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-buttons">
+      <button onclick="scrollToSection('inicio')">Início</button>
+      <button onclick="scrollToSection('sobre')">Sobre</button>
+      <button onclick="scrollToSection('servicos')">Serviços</button>
+      <button onclick="scrollToSection('localizacao')">Localização</button>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
   <main>
     <section id="inicio">
       <h2>Bem-vindo à Transportadora Rápida</h2>
@@ -65,7 +78,7 @@
       <div class="info-item seguro-info">
         <h2>Seguro</h2>
         <img src="images/seguro.png" alt="Ícone de seguro" class="seguro-icon">
-        <p>A Transportadora Rápida é devidamente certificada pela ANTT, Buonny e Sompo Seguro.</p>
+        <p>A WExpress é devidamente certificada pela ANTT, Buonny e Sompo Seguro.</p>
       </div>
       <div class="info-item especialista-info">
         <h2>Equipe especializada</h2>
@@ -87,41 +100,34 @@
     </section>
   </main>
 
+  <!-- Botão do WhatsApp -->
   <a id="whatsappButton"
     href="https://wa.me/5511967377191?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank">
     <img src="images/wpp.png" alt="Ícone do WhatsApp">
   </a>
 
-  <section id="formulario">
-    <button id="toggleFormularioInside" aria-label="Toggle Form" style="background: none; border: none;">
-      <img id="toggleIcon" src="images/icon-open.png" alt="Toggle Form" style="width: 16px; height: 16px;">
-    </button>
-    <h2>Entre em Contato</h2>
-    <form id="contatoForm" onsubmit="enviarFormulario(event)">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" placeholder="(DDD) Número" minlength="11" maxlength="15"
-        required>
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-      <button type="submit" id="submitButton">Enviar</button>
-      <p id="formResponse" style="display:none;"></p>
-    </form>
-  </section>
-
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2024 Transportadora Rápida. Todos os direitos reservados.</p>
     <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- JavaScript para toggle do menu mobile -->
+  <script>
+    const toggleNavBtn = document.getElementById('toggleNav');
+    const mobileButtons = document.querySelector('.mobile-buttons');
+
+    toggleNavBtn.addEventListener('click', function () {
+      mobileButtons.classList.toggle('show-buttons');
+    });
+
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
 </body>
 
 </html>
