@@ -1,225 +1,134 @@
-/* Reset de estilos básicos */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  /* Tamanho base de fonte */
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-/* Cabeçalho */
-header {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 1rem;
-  /* Espaçamento interno */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transportadora Rápida</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-/* Estilo para desktop */
-.desktop-view {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+<body>
+  <!-- Cabeçalho para desktop -->
+  <header class="desktop-view">
+    <h1>Transportadora Rápida</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
+    </nav>
+    <div class="contact-info">
+      <p class="phone">Telefone: (00) 1234-5678</p>
+      <p class="email">Email: Transportadora@cliente.com.br</p>
+    </div>
+  </header>
 
-.contact-info {
-  text-align: right;
-}
+  <!-- Cabeçalho para mobile -->
+  <header class="mobile-view">
+    <h1>Transportadora Rápida</h1>
+    <button id="toggleNav" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-buttons">
+      <ul>
+        <li><button onclick="scrollToSection('inicio')">Início</button></li>
+        <li><button onclick="scrollToSection('sobre')">Sobre</button></li>
+        <li><button onclick="scrollToSection('servicos')">Serviços</button></li>
+        <li><button onclick="scrollToSection('localizacao')">Localização</button></li>
+      </ul>
+    </div>
+  </header>
 
-.contact-info p {
-  margin: 0.5rem 1rem;
-}
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo à Transportadora Rápida</h2>
+      <p>Oferecemos serviços de transporte rápidos e seguros para todo o Brasil. Com uma frota moderna e uma equipe
+        altamente treinada, garantimos que sua carga chegue ao destino com eficiência e pontualidade.</p>
+      <img src="images/transporte.jpg" alt="Imagem de caminhão de transporte">
+    </section>
 
-/* Estilo para celular */
-.mobile-view {
-  display: none;
-}
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>A Transportadora Rápida tem mais de 20 anos de experiência no setor de logística. Nosso compromisso é
+        oferecer soluções de transporte personalizadas que atendam às necessidades específicas de cada cliente, sempre
+        com a
+        máxima segurança e rapidez.</p>
+      <p>Nossa missão é ser a escolha número um em transporte rodoviário no Brasil, mantendo um alto padrão de qualidade
+        e confiabilidade.</p>
+    </section>
 
-.mobile-buttons {
-  display: none;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 4rem;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 999;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-100%);
-  transition: transform 0.3s ease-in-out;
-}
+    <section id="servicos">
+      <h2>Nossos Serviços</h2>
+      <ul>
+        <li>Transporte de Cargas Gerais</li>
+        <li>Transporte de Cargas Perigosas</li>
+        <li>Logística e Distribuição</li>
+        <li>Transporte Fracionado</li>
+        <li>Serviços de Armazenagem</li>
+      </ul>
+      <p>Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de transporte. Nossa equipe
+        está pronta para ajudá-lo a encontrar a solução perfeita para sua empresa.</p>
+    </section>
 
-.mobile-buttons.show-buttons {
-  transform: translateY(0);
-}
+    <section id="informacoes-adicionais">
+      <div class="info-item seguro-info">
+        <h2>Seguro</h2>
+        <img src="images/seguro.png" alt="Ícone de seguro" class="seguro-icon">
+        <p>A WExpress é devidamente certificada pela ANTT, Buonny e Sompo Seguro.</p>
+      </div>
+      <div class="info-item especialista-info">
+        <h2>Equipe especializada</h2>
+        <img src="images/especialista.png" alt="Ícone de especialista" class="especialista-icon">
+        <p>O seu projeto sempre será gerenciado por especialistas. Garantimos que você tenha os profissionais mais
+          experientes trabalhando com você.</p>
+      </div>
+      <div class="info-item garantia-info">
+        <img src="images/garantia.png" alt="Ícone de garantia" class="garantia-icon">
+        <h2>Qualidade garantida</h2>
+        <p>Você encontrará o suporte necessário para garantir que tudo seja executado de forma eficiente. Estamos aqui
+          para ajudá-lo com qualquer dúvida.</p>
+      </div>
+    </section>
 
-.mobile-buttons ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+    <section id="localizacao">
+      <h2>Localização</h2>
+      <p>Aqui você encontrará informações sobre nossa localização.</p>
+    </section>
+  </main>
 
-.mobile-buttons ul li {
-  margin-bottom: 1rem;
-}
+  <!-- Botão do WhatsApp -->
+  <a id="whatsappButton"
+    href="https://wa.me/5511967377191?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank">
+    <img src="images/wpp.png" alt="Ícone do WhatsApp">
+  </a>
 
-.mobile-buttons button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 1rem;
-  text-align: left;
-  width: 100%;
-}
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Transportadora Rápida. Todos os direitos reservados.</p>
+    <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+  </footer>
 
-.mobile-buttons button:focus {
-  outline: none;
-}
+  <!-- JavaScript para toggle do menu mobile -->
+  <script>
+    const toggleNavBtn = document.getElementById('toggleNav');
+    const mobileButtons = document.querySelector('.mobile-buttons');
 
-/* Mostra o ícone de três barras apenas em dispositivos móveis */
-@media (max-width: 768px) {
-  .desktop-view {
-    display: none;
-  }
+    toggleNavBtn.addEventListener('click', function () {
+      mobileButtons.classList.toggle('show-buttons');
+    });
 
-  .mobile-view {
-    display: block;
-  }
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
 
-  .main-nav.show-nav {
-    display: block !important;
-  }
-
-  .contact-info {
-    display: none;
-  }
-
-  /* Estilizando o botão de toggle */
-  #toggleNav {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  #toggleNav span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  #toggleNav.show-nav span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  #toggleNav.show-nav span:nth-child(2) {
-    opacity: 0;
-  }
-
-  #toggleNav.show-nav span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .mobile-buttons {
-    display: flex;
-  }
-
-  main {
-    margin-top: 4rem;
-    /* Afasta o conteúdo principal do cabeçalho */
-  }
-}
-
-/* Menu de navegação */
-.main-nav {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  margin-right: 1rem;
-}
-
-.main-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.main-nav ul li {
-  margin: 0 0.5rem;
-  /* Espaçamento menor */
-}
-
-.main-nav ul li a {
-  color: #333;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Conteúdo Principal */
-main {
-  max-width: 1200px;
-  margin: 4rem auto 1rem;
-  /* Margem inferior ajustada */
-  padding: 1rem;
-  /* Espaçamento interno */
-}
-
-section {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-section img {
-  max-width: 100%;
-  height: auto;
-}
-
-section h2 {
-  margin-bottom: 1rem;
-}
-
-.info-item p {
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-/* Botão do WhatsApp */
-#whatsappButton {
-  position: fixed;
-  bottom: 1rem;
-  /* Espaçamento inferior */
-  right: 1rem;
-  /* Espaçamento à direita */
-  z-index: 1000;
-  background: none;
-  border: none;
-}
-
-#whatsappButton img {
-  width: 4.375rem;
-  /* Tamanho da imagem */
-  height: auto;
-  display: block;
-  border-radius: 50%;
-}
+</html>
