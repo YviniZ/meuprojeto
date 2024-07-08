@@ -1,6 +1,27 @@
 /* Estilos principais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.site-title {
+  font-size: 24px;
+  margin: 0;
+}
+
 .menu-toggle {
-  display: none;
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
@@ -28,123 +49,125 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.main-nav {
+  display: none;
+}
+
+.main-nav.open {
+  display: block;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.main-nav ul li {
+  margin-bottom: 10px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Estilos para telas menores, como celulares */
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
+  .menu-toggle {
     position: absolute;
-    top: 60px;
-    right: 20px;
+    right: 10px;
+    top: 10px;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
     background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
   }
 
   .main-nav.open {
-    display: block;
+    right: 0;
   }
 
-  .menu-toggle {
-    display: block;
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
   }
 
   .contact-info {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info p {
+    margin: 0;
   }
 }
 
-/* Estilo do formulário e outras seções continuam inalterados */
-
-/* Estilo de cabeçalho */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #f0f0f0;
-  position: relative;
-}
-
-header .logo {
-  width: 150px; /* Ajuste o tamanho conforme necessário */
-}
-
-header .main-nav ul {
-  display: flex;
-  gap: 20px;
-}
-
-header .main-nav ul li {
-  list-style: none;
-}
-
-header .main-nav ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-header .contact-info {
+.contact-info {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  align-items: flex-end;
 }
 
-/* Ajustes para seções e outros elementos */
-#whatsappButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+.contact-info p {
+  margin: 5px 0;
 }
 
-#whatsappButton img {
-  width: 50px; /* Ajuste o tamanho conforme necessário */
-  height: 50px;
-}
-
+/* Estilos do formulário */
 #formulario {
-  position: fixed;
-  top: 20px;
-  right: -336px; /* Posiciona fora da tela */
-  width: 336px;
-  transition: right 0.3s;
-  z-index: 1000;
-  background-color: #fff;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
+  margin: 20px auto;
+  max-width: 500px;
 }
 
-/* Ajustes para o formulário dentro do #formulario */
 #formulario h2 {
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-#formulario form {
+#contatoForm {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-#formulario form label {
-  font-weight: bold;
+#contatoForm label {
+  margin: 10px 0 5px;
 }
 
-#formulario form input,
-#formulario form textarea {
+#contatoForm input,
+#contatoForm textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#formulario form button {
+#submitButton {
+  margin-top: 10px;
   padding: 10px;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-#formulario form button:hover {
-  background-color: #555;
+#formResponse {
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f0f0f0;
 }
