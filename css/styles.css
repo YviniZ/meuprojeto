@@ -1,103 +1,164 @@
-/* Estilos principais */
-.menu-toggle {
-  display: block;
+/* Reset de estilos básicos */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  /* Tamanho base de fonte */
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 0rem;
+  /* Espaçamento interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para desktop */
+.desktop-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  text-align: right;
+}
+
+.contact-info p {
+  margin: 0.5rem 1rem;
+}
+
+/* Estilo para celular */
+.mobile-view {
+  display: none;
+}
+
+.mobile-buttons {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-buttons.show-buttons {
+  transform: translateY(0);
+}
+
+.mobile-buttons button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
+  font-size: 1rem;
 }
 
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.mobile-buttons button:focus {
+  outline: none;
 }
 
-.menu-toggle.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+/* Mostra o ícone de três barras apenas em dispositivos móveis */
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .main-nav.show-nav {
+    display: block !important;
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  /* Estilizando o botão de toggle */
+  #toggleNav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  #toggleNav span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  #toggleNav.show-nav span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #toggleNav.show-nav span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #toggleNav.show-nav span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-buttons {
+    display: flex;
+  }
 }
 
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
+/* Menu de navegação */
 .main-nav {
-  display: none;
-}
-
-.main-nav.open {
-  display: block;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .main-nav ul {
   list-style: none;
   padding: 0;
-  text-align: center;
+  display: flex;
 }
 
 .main-nav ul li {
-  margin-bottom: 10px;
+  margin: 0 0.5rem;
+  /* Espaçamento menor */
 }
 
 .main-nav ul li a {
-  text-decoration: none;
   color: #333;
-  font-size: 18px;
-}
-
-/* Estilos para telas menores, como celulares */
-@media (max-width: 768px) {
-  .menu-toggle {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-
-  .main-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-  }
-
-  .main-nav.open {
-    right: 0;
-  }
-
-  .main-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .main-nav ul li {
-    margin-bottom: 20px;
-  }
-
-  /* Oculta informações de contato */
-  .contact-info {
-    display: none;
-  }
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Conteúdo Principal */
 main {
   max-width: 1200px;
   margin: 4rem auto 1rem;
+  /* Margem inferior ajustada */
   padding: 1rem;
+  /* Espaçamento interno */
 }
 
 section {
@@ -114,32 +175,15 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-.info-item h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* Ajusta a posição dos ícones para que não sobreponham o texto */
-.info-item .seguro-icon,
-.info-item .especialista-icon,
-.info-item .garantia-icon {
-  position: absolute;
-  top: -0.9375rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2.5rem;
-  height: auto;
-  z-index: 1;
-}
-
 .info-item p {
   text-align: center;
 }
 
+/* CSS Atualizado */
 #servicos {
   background-color: #f0f0f0;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 #servicos ul {
@@ -147,29 +191,185 @@ section h2 {
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /* Centraliza as li */
 }
 
 #servicos ul li {
-  position: relative;
+  display: flex;
+  /* Para alinhar itens verticalmente */
+  align-items: center;
+  /* Alinha itens verticalmente */
+  text-align: left;
   margin-bottom: 1rem;
-  padding-left: 1rem;
+  position: relative;
 }
 
 #servicos ul li:before {
   content: "●";
   color: #333;
   font-size: 0.875rem;
+  margin-right: 0.5rem;
+  /* Espaçamento entre a bolinha e o texto */
+}
+
+#informacoes-adicionais {
+  background-color: #f0f0f0;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* Adiciona wrap para ajustar em telas menores */
+}
+
+#informacoes-adicionais .info-item {
+  width: 30%;
+  text-align: center;
+  /* Centraliza o conteúdo */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  /* Espaçamento inferior entre os itens */
+}
+
+#informacoes-adicionais h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#informacoes-adicionais p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+#informacoes-adicionais .info-item img {
+  display: block;
+  margin: 0 auto 0.625rem;
+  /* Centraliza a imagem abaixo do título */
+}
+
+/* Ajuste de posicionamento dos ícones */
+.seguro-info .seguro-icon,
+.especialista-info .especialista-icon,
+.garantia-info .garantia-icon {
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -0.9375rem;
+  /* Posicionamento ajustado */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  /* Tamanho ajustado */
+  height: auto;
+  z-index: 1;
+}
+
+#informacoes-adicionais .info-item h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  /* Espaçamento superior */
+}
+
+/* Ajustes específicos para telas menores */
+@media (max-width: 768px) {
+  header {
+    padding: 0.75rem;
+    /* Espaçamento interno menor */
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .main-nav.show-nav {
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav ul li {
+    margin: 1rem 0;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  main {
+    margin: 3rem auto 1rem;
+    /* Margem inferior ajustada */
+  }
+
+  #formulario {
+    width: calc(100% - 2rem);
+    /* Largura responsiva */
+    left: 1rem;
+  }
+
+  #whatsappButton {
+    width: 4rem;
+    /* Tamanho ajustado */
+    height: auto;
+    right: 1rem;
+  }
+
+  .mobile-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-buttons.show-buttons {
+    transform: translateY(0);
+  }
+
+  .mobile-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .mobile-buttons button:focus {
+    outline: none;
+  }
 }
 
 /* Botão do WhatsApp */
 #whatsappButton {
   position: fixed;
   bottom: 1rem;
+  /* Espaçamento inferior */
   right: 1rem;
+  /* Espaçamento à direita */
   z-index: 1000;
   background: none;
   border: none;
@@ -177,72 +377,10 @@ section h2 {
 
 #whatsappButton img {
   width: 4.375rem;
+  /* Tamanho da imagem */
   height: auto;
   display: block;
   border-radius: 50%;
-}
-
-/* Formulário de Contato */
-#formulario {
-  background-color: #ffbf00;
-  padding: 1rem;
-  width: 18.75rem;
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 1000;
-  border: 1px solid #ccc;
-  transition: left 0.3s ease-in-out;
-}
-
-#formulario h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-
-#formulario form {
-  display: flex;
-  flex-direction: column;
-}
-
-#formulario label {
-  margin-bottom: 0.625rem;
-}
-
-#formulario input,
-#formulario textarea {
-  padding: 0.625rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-}
-
-#formulario textarea {
-  resize: vertical;
-}
-
-#formulario button {
-  padding: 0.625rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#toggleFormularioInside {
-  position: absolute;
-  top: 0;
-  right: -1.25rem;
-  background: #f0f0f0;
-  border: none;
-  z-index: 1001;
-}
-
-#toggleIcon {
-  width: 1rem;
-  height: 1rem;
 }
 
 /* Footer */
@@ -264,6 +402,7 @@ footer {
 
 #informacoes-adicionais .info-item {
   width: 30%;
+  /* Largura fixa em percentual */
   text-align: left;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -300,38 +439,11 @@ footer {
 .garantia-info .garantia-icon {
   position: absolute;
   top: -0.9375rem;
+  /* Posicionamento ajustado */
   left: 50%;
   transform: translateX(-50%);
   width: 2.5rem;
+  /* Tamanho ajustado */
   height: auto;
   z-index: 1;
-}
-
-/* Ajustes específicos para telas menores */
-@media (max-width: 768px) {
-  header {
-    padding: 0.75rem;
-  }
-
-  .contact-info {
-    display: none; /* Oculta informações de contato */
-  }
-
-  nav ul li {
-    margin: 0 0.25rem;
-  }
-
-  main {
-    margin: 3rem auto 1rem;
-  }
-
-  #formulario {
-    width: calc(100% - 2rem);
-    left: 1rem;
-  }
-
-  #whatsappButton {
-    width: 4rem;
-    right: 1rem;
-  }
 }
