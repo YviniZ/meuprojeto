@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transportadora Rápida</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
   <!-- Cabeçalho para desktop -->
   <header class="desktop-view">
-    <h1>Transportadora Rápida</h1>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-      </ul>
-    </nav>
-    <div class="contact-info">
-      <p class="phone">Telefone: (00) 1234-5678</p>
-      <p class="email">Email: Transportadora@cliente.com.br</p>
+    <div class="header-container">
+      <h1>Transportadora Rápida</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </nav>
+      <div class="contact-info">
+        <p class="phone">Telefone: (00) 1234-5678</p>
+        <p class="email">Email: Transportadora@cliente.com.br</p>
+      </div>
     </div>
   </header>
 
   <!-- Cabeçalho para mobile -->
   <header class="mobile-view">
-    <h1>Transportadora Rápida</h1>
-    <button id="toggleNav" aria-label="Toggle Navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="mobile-buttons">
-      <button onclick="scrollToSection('inicio')">Início</button>
-      <button onclick="scrollToSection('sobre')">Sobre</button>
-      <button onclick="scrollToSection('servicos')">Serviços</button>
-      <button onclick="scrollToSection('localizacao')">Localização</button>
+    <div class="header-container">
+      <h1>Transportadora Rápida</h1>
+      <button id="toggleNav" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-buttons">
+        <button onclick="scrollToSection('inicio')">Início</button>
+        <button onclick="scrollToSection('sobre')">Sobre</button>
+        <button onclick="scrollToSection('servicos')">Serviços</button>
+        <button onclick="scrollToSection('localizacao')">Localização</button>
+      </div>
     </div>
   </header>
 
@@ -46,18 +48,14 @@
   <main>
     <section id="inicio">
       <h2>Bem-vindo à Transportadora Rápida</h2>
-      <p>Oferecemos serviços de transporte rápidos e seguros para todo o Brasil. Com uma frota moderna e uma equipe
-        altamente treinada, garantimos que sua carga chegue ao destino com eficiência e pontualidade.</p>
+      <p>Oferecemos serviços de transporte rápidos e seguros para todo o Brasil. Com uma frota moderna e uma equipe altamente treinada, garantimos que sua carga chegue ao destino com eficiência e pontualidade.</p>
       <img src="images/transporte.jpg" alt="Imagem de caminhão de transporte">
     </section>
 
     <section id="sobre">
       <h2>Sobre Nós</h2>
-      <p>A Transportadora Rápida tem mais de 20 anos de experiência no setor de logística. Nosso compromisso é oferecer
-        soluções de transporte personalizadas que atendam às necessidades específicas de cada cliente, sempre com a
-        máxima segurança e rapidez.</p>
-      <p>Nossa missão é ser a escolha número um em transporte rodoviário no Brasil, mantendo um alto padrão de qualidade
-        e confiabilidade.</p>
+      <p>A Transportadora Rápida tem mais de 20 anos de experiência no setor de logística. Nosso compromisso é oferecer soluções de transporte personalizadas que atendam às necessidades específicas de cada cliente, sempre com a máxima segurança e rapidez.</p>
+      <p>Nossa missão é ser a escolha número um em transporte rodoviário no Brasil, mantendo um alto padrão de qualidade e confiabilidade.</p>
     </section>
 
     <section id="servicos">
@@ -69,8 +67,7 @@
         <li>Transporte Fracionado</li>
         <li>Serviços de Armazenagem</li>
       </ul>
-      <p>Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de transporte. Nossa equipe está
-        pronta para ajudá-lo a encontrar a solução perfeita para sua empresa.</p>
+      <p>Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de transporte. Nossa equipe está pronta para ajudá-lo a encontrar a solução perfeita para sua empresa.</p>
     </section>
 
     <section id="informacoes-adicionais">
@@ -82,14 +79,12 @@
       <div class="info-item especialista-info">
         <h2>Equipe especializada</h2>
         <img src="images/especialista.png" alt="Ícone de especialista" class="especialista-icon">
-        <p>O seu projeto sempre será gerenciado por especialistas. Garantimos que você tenha os profissionais mais
-          experientes trabalhando com você.</p>
+        <p>O seu projeto sempre será gerenciado por especialistas. Garantimos que você tenha os profissionais mais experientes trabalhando com você.</p>
       </div>
       <div class="info-item garantia-info">
         <img src="images/garantia.png" alt="Ícone de garantia" class="garantia-icon">
         <h2>Qualidade garantida</h2>
-        <p>Você encontrará o suporte necessário para garantir que tudo seja executado de forma eficiente. Estamos aqui
-          para ajudá-lo com qualquer dúvida.</p>
+        <p>Você encontrará o suporte necessário para garantir que tudo seja executado de forma eficiente. Estamos aqui para ajudá-lo com qualquer dúvida.</p>
       </div>
     </section>
 
@@ -100,8 +95,7 @@
   </main>
 
   <!-- Botão do WhatsApp -->
-  <a id="whatsappButton"
-    href="https://wa.me/5511967377191?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank">
+  <a id="whatsappButton" href="https://wa.me/5511967377191?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank">
     <img src="images/wpp.png" alt="Ícone do WhatsApp">
   </a>
 
@@ -114,5 +108,4 @@
   <!-- JavaScript para toggle do menu mobile -->
   <script src="js/scripts.js"></script>
 </body>
-
 </html>
