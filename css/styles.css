@@ -212,32 +212,29 @@ footer p {
   margin: 0.5rem 0;
 }
 
-/* Estilo para a seção de informações adicionais */
+/* Seção de informações adicionais */
 #informacoes-adicionais {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: relative;
-  /* Adicionando position relative para os ícones absolutos */
 }
 
-/* Ajuste de posicionamento dos ícones */
 .info-item {
-  position: relative;
+  flex: 1 1 calc(33% - 2rem);
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.seguro-icon,
-.especialista-icon,
-.garantia-icon {
-  position: absolute;
-  top: 1rem;
-  /* Ajuste para posicionar um pouco abaixo do título */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  /* Tamanho do ícone */
-  height: auto;
-  z-index: 1;
+.info-item h2 {
+  margin-bottom: 1rem;
+}
+
+.info-item p {
+  margin-bottom: 0.5rem;
 }
 
 /* Estilo para imagens */
@@ -245,4 +242,32 @@ footer p {
   max-width: 100%;
   height: auto;
   margin-bottom: 1rem;
+}
+
+/* Responsivo para a seção de informações adicionais */
+@media (max-width: 768px) {
+  .info-item {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+.info-item h2 {
+  margin-bottom: 1rem;
+}
+
+/* Ajuste de posicionamento dos ícones */
+.seguro-info .seguro-icon,
+.especialista-info .especialista-icon,
+.garantia-info .garantia-icon {
+  position: absolute;
+  top: -0.9375rem;
+  /* Posicionamento ajustado */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  /* Tamanho ajustado */
+  height: auto;
+  z-index: 1;
 }
