@@ -247,7 +247,7 @@ footer p {
 .especialista-info .especialista-icon,
 .garantia-info .garantia-icon {
   position: absolute;
-  top: -3rem; /* Ajuste fino para posicionar acima do título */
+  top: -2.5rem; /* Ajuste fino para posicionar acima do título */
   left: 50%;
   transform: translateX(-50%);
   width: 2.5rem; /* Tamanho do ícone */
