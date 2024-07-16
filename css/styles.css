@@ -6,6 +6,8 @@ body {
   font-size: 1rem;
   max-width: 1200px;
   margin: auto;
+  text-align: center;
+  /* Centraliza o conteúdo dentro do body */
 }
 
 /* Cabeçalho */
@@ -244,6 +246,53 @@ footer p {
   margin-bottom: 1rem;
 }
 
+/* Estilo para a seção de serviços */
+#servicos {
+  background-color: #f2f2f2;
+  padding: 2rem 1rem;
+}
+
+/* Estilo para a seção de serviços */
+#servicos {
+  background-color: #f2f2f2;
+  padding: 2rem 1rem;
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+/* Ajustes para a lista de serviços */
+#servicos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#servicos li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centraliza os itens */
+  padding-left: 1.5rem;
+  /* Ajuste o padding conforme necessário */
+  margin-bottom: 1rem;
+  /* Ajuste a margem conforme necessário */
+}
+
+#servicos li:before {
+  content: '•';
+  /* Bolinha para marcar os itens */
+  color: #000;
+  /* Cor da bolinha */
+  font-size: 1.2em;
+  /* Tamanho da bolinha */
+  margin-right: 0.5rem;
+  /* Espaçamento entre bolinha e texto */
+}
+
+#servicos h2 {
+  margin-bottom: 2rem;
+  /* Ajuste o espaçamento do título conforme necessário */
+}
+
 /* Responsivo para a seção de informações adicionais */
 @media (max-width: 768px) {
   .info-item {
@@ -253,21 +302,40 @@ footer p {
 
 
 
-.info-item h2 {
-  margin-bottom: 1rem;
-}
-
 /* Ajuste de posicionamento dos ícones */
 .seguro-info .seguro-icon,
 .especialista-info .especialista-icon,
 .garantia-info .garantia-icon {
   position: absolute;
   top: -0.9375rem;
-  /* Posicionamento ajustado */
+  /* Ajuste fino para posicionar acima do título */
   left: 50%;
   transform: translateX(-50%);
   width: 2.5rem;
-  /* Tamanho ajustado */
+  /* Ajuste do tamanho do ícone conforme necessário */
   height: auto;
   z-index: 1;
+}
+
+.seguro-info {
+  width: 1rem;
+}
+
+/* Ajuste para posicionar dentro da borda do .info-item */
+.info-item {
+  position: relative;
+  /* Para que o ícone absoluto fique dentro deste contexto */
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Estilo para os títulos */
+.info-item h2 {
+  margin-bottom: 1rem;
+  position: relative;
+  /* Garante que o ícone absoluto se alinhe corretamente */
 }
