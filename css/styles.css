@@ -4,15 +4,13 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  /* Tamanho base de fonte */
 }
 
 /* Cabeçalho */
 header {
   background-color: rgba(255, 255, 255, 0.9);
   color: #000;
-  padding: 0rem;
-  /* Espaçamento interno */
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,7 +141,6 @@ header {
 
 .main-nav ul li {
   margin: 0 0.5rem;
-  /* Espaçamento menor */
 }
 
 .main-nav ul li a {
@@ -156,278 +153,83 @@ header {
 main {
   max-width: 1200px;
   margin: 4rem auto 1rem;
-  /* Margem inferior ajustada */
   padding: 1rem;
-  /* Espaçamento interno */
 }
 
 section {
   margin-bottom: 2rem;
-  text-align: center;
-}
-
-section img {
-  max-width: 100%;
-  height: auto;
 }
 
 section h2 {
   margin-bottom: 1rem;
 }
 
-.info-item p {
-  text-align: center;
-}
-
-/* CSS Atualizado */
-#servicos {
-  background-color: #f0f0f0;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-#servicos ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Centraliza as li */
-}
-
-#servicos ul li {
-  display: flex;
-  /* Para alinhar itens verticalmente */
-  align-items: center;
-  /* Alinha itens verticalmente */
-  text-align: left;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-#servicos ul li:before {
-  content: "●";
-  color: #333;
-  font-size: 0.875rem;
-  margin-right: 0.5rem;
-  /* Espaçamento entre a bolinha e o texto */
-}
-
-#informacoes-adicionais {
-  background-color: #f0f0f0;
-  padding: 2rem 1rem;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  /* Adiciona wrap para ajustar em telas menores */
-}
-
-#informacoes-adicionais .info-item {
-  width: 30%;
-  text-align: center;
-  /* Centraliza o conteúdo */
-  padding: 0 1rem;
-  box-sizing: border-box;
-  margin-bottom: 2rem;
-  /* Espaçamento inferior entre os itens */
-}
-
-#informacoes-adicionais h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#informacoes-adicionais p {
-  line-height: 1.6;
-  margin: 0;
-}
-
-#informacoes-adicionais .info-item img {
-  display: block;
-  margin: 0 auto 0.625rem;
-  /* Centraliza a imagem abaixo do título */
-}
-
-/* Ajuste de posicionamento dos ícones */
-.seguro-info .seguro-icon,
-.especialista-info .especialista-icon,
-.garantia-info .garantia-icon {
-  position: absolute;
-  top: -0.9375rem;
-  /* Posicionamento ajustado */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2.5rem;
-  /* Tamanho ajustado */
-  height: auto;
-  z-index: 1;
-}
-
-#informacoes-adicionais .info-item h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  /* Espaçamento superior */
-}
-
-/* Ajustes específicos para telas menores */
-@media (max-width: 768px) {
-  header {
-    padding: 0.75rem;
-    /* Espaçamento interno menor */
-  }
-
-  .main-nav {
-    display: none;
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .main-nav.show-nav {
-    transform: translateY(0);
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-  }
-
-  .main-nav ul li {
-    margin: 1rem 0;
-  }
-
-  .desktop-view {
-    display: none;
-  }
-
-  .mobile-view {
-    display: block;
-  }
-
-  main {
-    margin: 3rem auto 1rem;
-    /* Margem inferior ajustada */
-  }
-
-  #formulario {
-    width: calc(100% - 2rem);
-    /* Largura responsiva */
-    left: 1rem;
-  }
-
-  #whatsappButton {
-    width: 4rem;
-    /* Tamanho ajustado */
-    height: auto;
-    right: 1rem;
-  }
-
-  .mobile-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 999;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .mobile-buttons.show-buttons {
-    transform: translateY(0);
-  }
-
-  .mobile-buttons button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  .mobile-buttons button:focus {
-    outline: none;
-  }
-}
-
 /* Botão do WhatsApp */
 #whatsappButton {
   position: fixed;
-  bottom: 1rem;
-  /* Espaçamento inferior */
-  right: 1rem;
-  /* Espaçamento à direita */
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
-  background: none;
-  border: none;
+  display: flex;
+  align-items: center;
 }
 
 #whatsappButton img {
-  width: 4.375rem;
-  /* Tamanho da imagem */
-  height: auto;
-  display: block;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
-/* Footer */
+/* Rodapé */
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
-/* Informações Adicionais */
+footer p {
+  margin: 0.5rem 0;
+}
+
+/* Seção de informações adicionais */
 #informacoes-adicionais {
-  background-color: #f0f0f0;
-  padding: 2rem 1rem;
-  text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-#informacoes-adicionais .info-item {
-  width: 30%;
-  /* Largura fixa em percentual */
-  text-align: left;
-  padding: 0 1rem;
-  box-sizing: border-box;
+.info-item {
+  flex: 1 1 calc(33% - 2rem);
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-#informacoes-adicionais h2 {
-  font-size: 1.5rem;
+.info-item h2 {
   margin-bottom: 1rem;
 }
 
-#informacoes-adicionais p {
-  line-height: 1.6;
-  margin: 0;
+.info-item p {
+  margin-bottom: 0.5rem;
 }
 
-/* Ícones sobrepostos */
-.info-item {
-  position: relative;
-  text-align: center;
-}
-
+/* Estilo para imagens */
 .info-item img {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 0.625rem;
+  margin-bottom: 1rem;
 }
+
+/* Responsivo para a seção de informações adicionais */
+@media (max-width: 768px) {
+  .info-item {
+    flex: 1 1 100%;
+  }
+}
+
 
 .info-item h2 {
   margin-bottom: 1rem;
