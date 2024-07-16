@@ -220,19 +220,21 @@ footer p {
   position: relative; /* Adicionando position relative para os ícones absolutos */
 }
 
+/* Ajuste de posicionamento dos ícones */
 .info-item {
-  flex: 1 1 calc(33% - 2rem);
-  background-color: #f9f9f9;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative; /* Adicionando position relative para os ícones absolutos */
+  position: relative;
 }
 
-.info-item h2 {
-  margin-bottom: 1rem;
+.seguro-icon,
+.especialista-icon,
+.garantia-icon {
+  position: absolute;
+  top: 1rem; /* Ajuste para posicionar um pouco abaixo do título */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* Tamanho do ícone */
+  height: auto;
+  z-index: 1;
 }
 
 /* Estilo para imagens */
@@ -242,15 +244,3 @@ footer p {
   margin-bottom: 1rem;
 }
 
-/* Ajuste de posicionamento dos ícones */
-.seguro-info .seguro-icon,
-.especialista-info .especialista-icon,
-.garantia-info .garantia-icon {
-  position: absolute;
-  top: -2.5rem; /* Ajuste fino para posicionar acima do título */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2.5rem; /* Tamanho do ícone */
-  height: auto;
-  z-index: 1;
-}
