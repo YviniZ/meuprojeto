@@ -113,12 +113,11 @@ function loadPage(page) {
   }
 }
 
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const toggleNav = document.getElementById("toggleNav");
   const mobileButtons = document.querySelector(".mobile-buttons");
 
-  toggleNav.addEventListener("click", function () {
+  toggleNav.addEventListener("click", function() {
     mobileButtons.classList.toggle("show-buttons");
     toggleNav.classList.toggle("show-nav");
   });
@@ -129,4 +128,5 @@ function scrollToSection(sectionId) {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
+}
 }
