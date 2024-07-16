@@ -212,11 +212,12 @@ footer p {
   margin: 0.5rem 0;
 }
 
-/* Seção de informações adicionais */
+/* Estilo para a seção de informações adicionais */
 #informacoes-adicionais {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative; /* Adicionando position relative para os ícones absolutos */
 }
 
 .info-item {
@@ -227,14 +228,11 @@ footer p {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  position: relative; /* Adicionando position relative para os ícones absolutos */
 }
 
 .info-item h2 {
   margin-bottom: 1rem;
-}
-
-.info-item p {
-  margin-bottom: 0.5rem;
 }
 
 /* Estilo para imagens */
@@ -244,30 +242,15 @@ footer p {
   margin-bottom: 1rem;
 }
 
-/* Responsivo para a seção de informações adicionais */
-@media (max-width: 768px) {
-  .info-item {
-    flex: 1 1 100%;
-  }
-}
-
-
-
-.info-item h2 {
-  margin-bottom: 1rem;
-}
-
 /* Ajuste de posicionamento dos ícones */
 .seguro-info .seguro-icon,
 .especialista-info .especialista-icon,
 .garantia-info .garantia-icon {
   position: absolute;
-  top: -0.9375rem;
-  /* Posicionamento ajustado */
+  top: -2rem; /* Ajuste fino para posicionar acima do título */
   left: 50%;
   transform: translateX(-50%);
-  width: 2.5rem;
-  /* Tamanho ajustado */
+  width: 2.5rem; /* Tamanho do ícone */
   height: auto;
   z-index: 1;
 }
