@@ -337,10 +337,18 @@ footer {
   /* Garante que o ícone absoluto se alinhe corretamente */
 }
 
+/* Estilo para a seção de localização */
+#localizacao {
+  text-align: center; /* Centraliza o texto */
+  padding: 2rem 1rem; /* Ajuste de espaçamento interno */
+}
+
+/* Estilo para o mapa no mobile */
 #localizacao iframe {
   width: 100%;
   height: 300px; /* Altura ajustável conforme necessário */
   max-width: 100%; /* Garante que o iframe não ultrapasse a largura do container */
+  margin-top: 1rem; /* Espaçamento superior */
 }
 
 /* Estilo para o formulário */
