@@ -217,35 +217,27 @@ footer p {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: relative; /* Adicionando position relative para os ícones absolutos */
+  position: relative;
+  /* Adicionando position relative para os ícones absolutos */
 }
 
 /* Ajuste de posicionamento dos ícones */
 .info-item {
   position: relative;
-  padding-top: 2rem; /* Espaço para acomodar o ícone */
 }
 
 .seguro-icon,
 .especialista-icon,
 .garantia-icon {
   position: absolute;
-  top: 0; /* Ajuste para posicionar no topo da .info-item */
+  top: 1rem;
+  /* Ajuste para posicionar um pouco abaixo do título */
   left: 50%;
   transform: translateX(-50%);
-  width: 50px; /* Tamanho do ícone */
+  width: 50px;
+  /* Tamanho do ícone */
   height: auto;
   z-index: 1;
-}
-
-/* Estilo para títulos */
-.info-item h2 {
-  margin-bottom: 0.5rem; /* Reduzido o espaço entre o título e o parágrafo */
-}
-
-/* Estilo para parágrafos */
-.info-item p {
-  margin-bottom: 0.5rem; /* Reduzido o espaço entre parágrafos */
 }
 
 /* Estilo para imagens */
@@ -254,4 +246,3 @@ footer p {
   height: auto;
   margin-bottom: 1rem;
 }
-
