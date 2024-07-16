@@ -99,8 +99,28 @@
 
     <section id="localizacao">
       <h2>Localização</h2>
-      <p>Aqui você encontrará informações sobre nossa localização.</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117013.68862938354!2d-46.771617179198685!3d-23.580013781292774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5801fce316b9%3A0xc74ac11f018e1f3a!2sKonica%20Minolta%20Business%20Solutions%20do%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1721155959823!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
+
+    <section id="formulario">
+      <!-- Formulário -->
+      <div class="formulario-container">
+        <h2>Entre em contato</h2>
+        <form id="contactForm" action="#" method="POST">
+          <input type="text" id="nome" name="nome" placeholder="Nome" required>
+          <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <textarea id="mensagem" name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="mensagem-enviado"></p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Botão do WhatsApp -->
