@@ -134,6 +134,16 @@ header {
   .mobile-buttons {
     display: flex;
   }
+
+  /* Mostra o menu mobile quando o botão de três barras é clicado */
+  #toggleNav.show-nav + .mobile-buttons {
+    display: flex;
+  }
+
+  /* Ajuste para exibir o menu mobile quando o botão de três barras é clicado */
+  #toggleNav.show-nav + .mobile-buttons {
+    display: flex;
+  }
 }
 
 /* Menu de navegação */
@@ -233,30 +243,6 @@ footer p {
   margin-bottom: 1rem;
 }
 
-.info-item p {
-  margin-bottom: 0.5rem;
-}
-
-/* Estilo para imagens */
-.info-item img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-/* Responsivo para a seção de informações adicionais */
-@media (max-width: 768px) {
-  .info-item {
-    flex: 1 1 100%;
-  }
-}
-
-
-
-.info-item h2 {
-  margin-bottom: 1rem;
-}
-
 /* Ajuste de posicionamento dos ícones */
 .seguro-info .seguro-icon,
 .especialista-info .especialista-icon,
@@ -270,4 +256,11 @@ footer p {
   /* Tamanho ajustado */
   height: auto;
   z-index: 1;
+}
+
+/* Responsivo para a seção de informações adicionais */
+@media (max-width: 768px) {
+  .info-item {
+    flex: 1 1 100%;
+  }
 }
