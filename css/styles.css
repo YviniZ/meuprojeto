@@ -337,6 +337,12 @@ footer {
   /* Garante que o ícone absoluto se alinhe corretamente */
 }
 
+#localizacao iframe {
+  width: 100%;
+  height: 300px; /* Altura ajustável conforme necessário */
+  max-width: 100%; /* Garante que o iframe não ultrapasse a largura do container */
+}
+
 /* Estilo para o formulário */
 #formulario {
   max-width: 400px;
