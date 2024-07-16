@@ -351,6 +351,25 @@ footer {
   margin-top: 1rem; /* Espaçamento superior */
 }
 
+/* Ajuste para desktop */
+@media (min-width: 769px) {
+  #localizacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #localizacao iframe {
+    width: 70%;
+    height: 500px; /* Altura ajustável conforme necessário */
+    margin-top: 0;
+  }
+
+  .formulario-container {
+    flex: 1;
+    max-width: 30%;
+    margin-left: 2rem; /* Ajuste a margem conforme necessário */
+  }
 /* Estilo para o formulário */
 #formulario {
   max-width: 400px;
